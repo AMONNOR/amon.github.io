@@ -1,0 +1,62 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>去哪吃？</title>
+    <script type="text/javascript">
+
+
+        function start() {
+            var select = new Array("打饭", "泡面", "小火锅", "麻辣香锅", "面条", "炒饭", "麻辣烫", "炒饭", "剁椒拌饭", "屎", "公二自助", "研一打饭");
+            var a = Math.round(Math.random() * 7);
+
+            document.getElementById("t1").innerHTML = select[a];
+            id = window.setTimeout("start()", 10);
+            document.getElementById("start").disabled = "disabled";
+            document.getElementById("stop").disabled = "";
+        }
+
+        function stop() {
+
+            window.clearTimeout(id);
+
+            document.getElementById("stop").disabled = "disabled";
+            document.getElementById("start").disabled = "";
+        }
+    </script>
+    <style type="text/css">
+        th {
+
+            font-size: 150px;
+            font-style: normal;
+            line-height: normal;
+            font-weight: bold;
+            font-variant: normal;
+        }
+
+        table {
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <button id="start" onclick="start()" style="width:80px;height:40px;">Start</button>
+    <button id="stop" onclick="stop()" style="width:80px;height:40px;" disabled="disabled">Stop</button>
+    <table border="0" align="center">
+        <tr>
+            <th id="t1">
+                今天吃什么？
+            </th>
+
+        </tr>
+    </table>
+</body>
+
+</html>
